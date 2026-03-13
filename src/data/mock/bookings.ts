@@ -1,0 +1,40 @@
+import type { Booking } from "@/types/subscriber";
+
+export const mockBookings: Booking[] = [
+  {
+    id: "b1",
+    astrologerId: "a1",
+    astrologerName: "Pandit Rajesh Sharma",
+    astrologerPhoto: "/placeholder-avatar.png",
+    serviceName: "Birth Chart Analysis",
+    serviceType: "video",
+    scheduledAt: "2026-03-01T14:00:00",
+    amount: 499,
+    status: "CONFIRMED",
+    customerName: "Demo User",
+    customerNotes: "Want to understand career prospects.",
+    birthDetails: { dob: "1990-05-15", birthTime: "10:30", birthPlace: "Mumbai" },
+  },
+  {
+    id: "b2",
+    astrologerId: "a3",
+    astrologerName: "Pandit Mahesh Joshi",
+    serviceName: "Kundali Reading",
+    serviceType: "video",
+    scheduledAt: "2026-02-28T11:00:00",
+    amount: 499,
+    status: "COMPLETED",
+    customerName: "Demo User",
+  },
+  {
+    id: "b3",
+    astrologerId: "a2",
+    astrologerName: "Guruji Anil Bhatt",
+    serviceName: "Prashna Kundali",
+    serviceType: "voice",
+    scheduledAt: "2026-02-20T09:00:00",
+    amount: 449,
+    status: "CANCELLED",
+    customerName: "Demo User",
+  },
+];

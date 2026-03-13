@@ -1,0 +1,1 @@
+export { default } from "@/app/customer-main/(main)/notifications/page";
