@@ -33,7 +33,7 @@ export default function ReviewsPage() {
               <li key={r.id} className="rounded-lg border p-3">
                 <div className="flex items-center justify-between gap-2">
                   <p className="font-medium">{r.client}</p>
-                  <StarRating rating={r.rating} className="shrink-0" />
+                  <StarRating rating={Number(r.rating ?? 0)} className="shrink-0" />
                 </div>
                 <p className="mt-1 text-sm text-muted-foreground">{r.comment}</p>
                 <p className="mt-1 text-xs text-muted-foreground">{r.date}</p>

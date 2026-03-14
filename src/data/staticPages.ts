@@ -6,6 +6,22 @@
 /** Permissive type so subscriber pages can render stub data without strict typing. */
 type WithId = { id: string; name?: string; [k: string]: string | number | boolean | undefined };
 
+type ConsultationSlot = {
+  id: string;
+  date: string;
+  time: string;
+  duration: string;
+  available: boolean;
+  customerName?: string;
+};
+
+type WalletTransaction = {
+  id: string;
+  desc: string;
+  date: string;
+  amount: number;
+};
+
 export const mockAdCampaigns: { id: string; name: string; status: string; spend: number; reach: number }[] = [];
 export const websiteUpdatesStatic: Record<string, { title?: string; items?: unknown[] }> = {};
 export const mockReportTypes: WithId[] = [];
@@ -19,7 +35,7 @@ export const mockAnalytics: { label: string; value: string | number }[] = [];
 export const servicesStatic: Record<string, { title?: string; items?: unknown[] }> = {};
 export const mockMailingList: WithId[] = [];
 export const mockQuestions: WithId[] = [];
-export const mockConsultationSlots: WithId[] = [];
+export const mockConsultationSlots: ConsultationSlot[] = [];
 export const mockFiles: WithId[] = [];
 export const mockQueries: WithId[] = [];
 export const panchangStatic: Record<string, { title?: string; items?: unknown[] }> = {};
@@ -32,10 +48,10 @@ export const mockLeads: WithId[] = [];
 export const learningStatic: Record<string, { title?: string; items?: unknown[] }> = {};
 export const mockInvoices: WithId[] = [];
 export const mockMailerCampaigns: WithId[] = [];
-export const mockWallet = { balance: 0 };
-export const mockWalletHistory: WithId[] = [];
+export const mockWallet = { balance: 0, currency: "INR" };
+export const mockWalletHistory: WalletTransaction[] = [];
 export const mockSubscriptions: WithId[] = [];
 export const mockRetailPurchases: WithId[] = [];
-export const mockReferralStats = { total: 0 };
+export const mockReferralStats = { total: 0, totalReferrals: 0, converted: 0, earnings: 0 };
 export const mockReferralList: WithId[] = [];
 export const mockProducts: WithId[] = [];

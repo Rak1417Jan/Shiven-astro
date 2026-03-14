@@ -17,9 +17,9 @@ export default function ClientsPage() {
         const matchSearch =
           !q ||
           c.name.toLowerCase().includes(q) ||
-          c.phone.toLowerCase().includes(q) ||
-          c.service.toLowerCase().includes(q) ||
-          c.location.toLowerCase().includes(q);
+          (c.phone ?? "").toLowerCase().includes(q) ||
+          (c.service ?? "").toLowerCase().includes(q) ||
+          (c.location ?? "").toLowerCase().includes(q);
         const matchSegment = segment === "all" || c.segment === segment;
         return matchSearch && matchSegment;
       }),

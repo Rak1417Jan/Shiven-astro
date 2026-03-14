@@ -20,20 +20,25 @@ export default function WebsiteUpdatesPage() {
     );
   }
 
+  const items = data.items ?? [];
+
   return (
     <div className="space-y-6">
       <h1 className="font-heading text-xl font-semibold">{data.title}</h1>
       <ul className="space-y-3">
-        {data.items.map((item, i) => (
-          <Card key={i}>
-            <CardContent className="flex flex-wrap items-center justify-between gap-4 p-4">
-              <div>
-                <p className="font-medium">{item.title}</p>
-                <p className="text-sm text-muted-foreground">{item.type}{item.date ? ` · ${item.date}` : ""}</p>
-              </div>
-            </CardContent>
-          </Card>
-        ))}
+        {items.map((rawItem, i) => {
+          const item = rawItem as { title?: string; type?: string; date?: string };
+          return (
+            <Card key={i}>
+              <CardContent className="flex flex-wrap items-center justify-between gap-4 p-4">
+                <div>
+                  <p className="font-medium">{item.title}</p>
+                  <p className="text-sm text-muted-foreground">{item.type}{item.date ? ` · ${item.date}` : ""}</p>
+                </div>
+              </CardContent>
+            </Card>
+          );
+        })}
       </ul>
     </div>
   );
